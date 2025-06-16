@@ -11,6 +11,7 @@ WildRydes.map = WildRydes.map || {};
         } else {
             window.location.href = '/signin.html';
         }
+        console.log(authToken);
     }).catch(function handleTokenError(error) {
         alert(error);
         window.location.href = '/signin.html';
@@ -33,6 +34,8 @@ WildRydes.map = WildRydes.map || {};
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
+                console.log(authToken);
+                
                 alert('An error occured when requesting your unicorn:\n' + jqXHR.responseText);
             }
         });
